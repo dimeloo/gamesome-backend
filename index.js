@@ -11,11 +11,12 @@ const games = database.collection('games')
 
 client.connect()
 console.log('Connected to Mongodb')
+const PORT = process.env.PORT
 
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.listen(4040, () => console.log('API running on 4040'))
+app.listen(PORT, () => console.log('API running on port', PORT))
 
 
 // Get games from the 'shooters' 'genre' for testing
